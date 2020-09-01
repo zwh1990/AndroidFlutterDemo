@@ -1,0 +1,10 @@
+include ':app'
+setBinding(new Binding([gradle: this]))
+evaluate(new File(
+  settingsDir,
+  '../flutter_learn/.android/include_flutter.groovy'
+))
+rootProject.name = "LearnDemo"
+
+include ':flutter_learn'
+project(':flutter_learn').projectDir = new File('../flutter_learn')
